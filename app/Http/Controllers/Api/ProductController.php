@@ -35,7 +35,7 @@ class ProductController extends Controller
                 'category_id' => 'required|numeric',
                 'brand_id' => 'required|numeric',
                 'discount' => 'required|numeric',
-                'amount' => 'required|numeric',
+                'quantity' => 'required|numeric',
             ]);
 
             $product = new Products();
@@ -50,7 +50,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->brand_id = $request->brand_id;
             $product->discount = $request->discount;
-            $product->amount = $request->amount;
+            $product->quantity = $request->quantity;
             $product->save();
 
             return response()->json(['message' => 'Record successfully created'], 201);
@@ -84,7 +84,7 @@ class ProductController extends Controller
                 'category_id' => 'required|numeric',
                 'brand_id' => 'required|numeric',
                 'discount' => 'required|numeric',
-                'amount' => 'required|numeric',
+                'quantity' => 'required|numeric',
             ]);
 
             $product = Products::find($id);
@@ -107,7 +107,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->brand_id = $request->brand_id;
             $product->discount = $request->discount;
-            $product->amount = $request->amount;
+            $product->quantity = $request->quantity;
             $product->save();
 
             return response()->json(['message' => 'Record successfully updated'], 200);
